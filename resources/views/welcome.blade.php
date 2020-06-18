@@ -78,10 +78,10 @@
                     @endauth
                 </div>
             @endif
-
+            <?php $nombre =" Hamilton"; ?>
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Bienvenido  <?php echo $nombre; ?>
                 </div>
 
                 <div class="links">
