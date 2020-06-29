@@ -2,38 +2,52 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+
+
+//Route::view('/','home')->name('home');
+//Route::view('/about','about')->name('about');
+// Route::get('/portfolio', 'PortfolioController');
+
+
+//Route::view('/contact','contact')->name('contact');
+
+
+/* resource resibe => index, store , create, show, update, destroy, edit
+
+        php artisan make:controller PortfolioController -r
+                index, store , create, show, update, destroy, edit
+
+    - solo saba a ver index show
+    Route::resource('projects', 'PortfolioController')->only(['index', 'show']);
+
+    - Cuando lo quiero ver index show pero los demas si
+    Route::resource('projects', 'PortfolioController')->except(['index', 'show']);
+
 */
 
-//Route::view('/','home')
-//Route::view('/','home', ['nombre' => 'Hamilton']);
 
-/*
-Route::get('home', function () {
-    $nombre = "Hamilton";
-    return view('home')->with(['nombre'=> $nombre]);
-})->name('home');
+/* resource resive => index, store , create, show, update, destroy, edit
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+        php artisan make:controller PortfolioController -r
+                index, store , create, show, update, destroy, edit
+
+    - solo saba a ver index show
+    Route::resource('projects', 'PortfolioController')->only(['index', 'show']);
+
+    - Cuando lo quiero ver index show pero los demas si
+    Route::resource('projects', 'PortfolioController')->except(['index', 'show']);
+
+*/
+
+/* api resive =>index, store , create, update, destroy, edit
+
+         php artisan make:controller PortfolioController --api
+                index, store , create, update, destroy, edit,
+
+        Route::apiResource('projects', 'PortfolioController');
+
 */
 
 
 
-Route::view('/','home')->name('home');
-Route::view('/about','about')->name('about');
-
-
-Route::get('/portfolio', 'PortfolioController');
-
-
-Route::view('/contact','contact')->name('contact');
+Route::apiResource('projects', 'PortfolioController');
