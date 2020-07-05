@@ -10,11 +10,15 @@ Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
 Route::view('/contact','contact')->name('contact');
 
 
-Route::get('contact','MessagesController@store')
+Route::get('contact','MessagesController@store');
 
 
 //Route::apiResource('projects', 'PortfolioController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 ?>
