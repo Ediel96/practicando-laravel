@@ -4,16 +4,16 @@
 
 @section('content')
     <h1>Portafolio</h1>
-        
+
     <lu>
         @if($portfolio)
             @foreach ($portfolio as $portfolioItem)
 
-                <li> {{ $portfolioItem['title'] }} </li>;
+                <li> <a href="{{route('porfolio.shwo')}}">{{ $portfolioItem->title }}</a></li>;
             @endforeach
         @else
             <li>No hay proyectos para mostrar</li>
-        @endif 
+        @endif
     </lu>
 
 @endsection
